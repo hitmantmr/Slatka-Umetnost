@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Klijentkinja može zameniti 'YOUR_FORMSPREE_TOKEN' sa pravim Formspree ID-jem
       // Formspree je besplatan i sakriva email adresu sa koda sajta
-      const formspreeToken = 'YOUR_FORMSPREE_TOKEN'; 
+      const formspreeToken = 'meewyrbj'; 
       
       const formData = {
         Ime_i_Prezime: name,
