@@ -57,6 +57,10 @@ html {
   font-size: 16px;
 }
 
+section {
+  scroll-margin-top: 100px; /* Sprečava da fiksni navbar prekrije početak sekcije pri skrolovanju */
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--color-text);
