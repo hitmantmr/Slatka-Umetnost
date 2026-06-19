@@ -197,10 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
+      const cakeTypeInput = document.getElementById('form-cake-type');
+      const selectTrigger = document.getElementById('custom-select-trigger');
+      
+      if (cakeTypeInput && !cakeTypeInput.value) {
+        if (selectTrigger) {
+          selectTrigger.classList.add('select-error');
+          selectTrigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+      
       const name = document.getElementById('form-name').value.trim();
       const email = document.getElementById('form-email').value.trim();
       const phone = document.getElementById('form-phone').value.trim();
-      const cakeType = document.getElementById('form-cake-type').value;
+      const cakeType = cakeTypeInput.value;
       const msg = document.getElementById('form-message').value.trim();
       
       // Onemogući dugme i prikaži loader tokom slanja
@@ -286,6 +297,60 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
+      });
+    });
+  }
+
+  // 9. Custom Select Dropdown logic
+  const selectTrigger = document.getElementById('custom-select-trigger');
+  const selectOptionsList = document.getElementById('custom-select-options-list');
+  const hiddenInput = document.getElementById('form-cake-type');
+  const selectOptions = document.querySelectorAll('.custom-select-option');
+
+  if (selectTrigger && selectOptionsList && hiddenInput) {
+    // Toggle dropdown
+    selectTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectTrigger.classList.toggle('active');
+      selectOptionsList.classList.toggle('active');
+      selectTrigger.classList.remove('select-error');
+    });
+
+    // Close dropdown on click outside
+    document.addEventListener('click', (e) => {
+      if (!selectTrigger.contains(e.target) && !selectOptionsList.contains(e.target)) {
+        selectTrigger.classList.remove('active');
+        selectOptionsList.classList.remove('active');
+      }
+    });
+
+    // Handle option selection
+    selectOptions.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.stopPropagation();
+        
+        // Remove selected class from all options
+        selectOptions.forEach(opt => opt.classList.remove('selected'));
+        
+        // Add selected class to clicked option
+        option.classList.add('selected');
+        
+        // Get option value and label
+        const val = option.getAttribute('data-value');
+        const text = option.textContent;
+        
+        // Update trigger text and hidden input value
+        const placeholderSpan = selectTrigger.querySelector('span');
+        if (placeholderSpan) {
+          placeholderSpan.textContent = text;
+          placeholderSpan.classList.remove('custom-select-placeholder');
+        }
+        
+        hiddenInput.value = val;
+        
+        // Close dropdown
+        selectTrigger.classList.remove('active');
+        selectOptionsList.classList.remove('active');
       });
     });
   }

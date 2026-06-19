@@ -1309,3 +1309,111 @@ textarea.contact-form-control {
     font-size: 1.25rem;
   }
 }
+
+/* Custom Select Dropdown */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid rgba(223, 214, 206, 0.6);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.custom-select:hover {
+  border-color: var(--color-primary);
+}
+
+.custom-select.active {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
+}
+
+.custom-select.select-error {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15) !important;
+}
+
+.custom-select i {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease;
+}
+
+.custom-select.active i {
+  transform: rotate(180deg);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  border: 1px solid rgba(223, 214, 206, 0.6);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-medium);
+  z-index: 100;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-select-options.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.custom-select-option {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-bottom: 1px solid rgba(223, 214, 206, 0.2);
+  text-align: left;
+}
+
+.custom-select-option:last-child {
+  border-bottom: none;
+}
+
+.custom-select-option:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  padding-left: 1.5rem;
+}
+
+.custom-select-option.selected {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.custom-select-placeholder {
+  color: var(--color-text-light);
+}
+
+.hidden-validation-input {
+  opacity: 0;
+  position: absolute;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}

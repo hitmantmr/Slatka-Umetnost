@@ -17,7 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=1.8">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.9">
 </head>
 <body>
 
@@ -375,16 +375,27 @@
             </div>
             
             <div class="contact-form-group">
-              <label for="form-cake-type">Tip proslave / torte *</label>
-              <select id="form-cake-type" class="contact-form-control" required>
-                <option value="" disabled selected>Izaberite tip proslave</option>
-                <option value="Svadbena Torta">Svadba (Mladenačka torta)</option>
-                <option value="Dečiji Rođendan">Dečiji rođendan</option>
-                <option value="Rođendan za odrasle">Rođendan za odrasle</option>
-                <option value="Krštenje">Krštenje</option>
-                <option value="Sitni kolači / Kapkejkovi">Sitni kolači ili Kapkejkovi</option>
-                <option value="Drugo">Drugo slavlje</option>
-              </select>
+              <label>Tip proslave / torte *</label>
+              <div class="custom-select-wrapper">
+                <div class="custom-select" id="custom-select-trigger">
+                  <span class="custom-select-placeholder">Izaberite tip proslave / torte</span>
+                  <i class="ri-arrow-down-s-line"></i>
+                </div>
+                <div class="custom-select-options" id="custom-select-options-list">
+                  <div class="custom-select-option" data-value="Mladenačke Torte">Mladenačke Torte</div>
+                  <div class="custom-select-option" data-value="Rođendanske Torte">Rođendanske Torte</div>
+                  <div class="custom-select-option" data-value="18. Rođendani">18. Rođendani</div>
+                  <div class="custom-select-option" data-value="Dečije Torte">Dečije Torte</div>
+                  <div class="custom-select-option" data-value="Cupcakes & Mafini">Cupcakes & Mafini</div>
+                  <div class="custom-select-option" data-value="Krofnice & Kolači">Krofnice & Kolači</div>
+                  <div class="custom-select-option" data-value="PopCakes & Sladoledi">PopCakes & Sladoledi</div>
+                  <div class="custom-select-option" data-value="Čokoladna Iznenađenja">Čokoladna Iznenađenja</div>
+                  <div class="custom-select-option" data-value="Figure">Figure</div>
+                  <div class="custom-select-option" data-value="Ostalo">Ostalo</div>
+                </div>
+              </div>
+              <!-- Skriveni input za HTML5 validaciju forme -->
+              <input type="text" id="form-cake-type" class="hidden-validation-input" value="">
             </div>
             
             <div class="contact-form-group">
@@ -442,6 +453,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/gallery-data.js"></script>
-  <script src="assets/js/main.js?v=1.8"></script>
+  <script src="assets/js/main.js?v=1.9"></script>
 </body>
 </html>
