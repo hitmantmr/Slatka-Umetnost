@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 450) {
+      if (window.scrollY > 150) {
         backToTopBtn.classList.add('active');
       } else {
         backToTopBtn.classList.remove('active');
