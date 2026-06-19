@@ -637,13 +637,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .lightbox-content {
   position: relative;
-  max-width: 90%;
-  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .lightbox-img {
-  max-width: 100%;
-  max-height: 80vh;
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--border-radius-md);
   border: 3px solid var(--color-white);
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
