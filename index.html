@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Slatka Umetnost | Unikatne Domaće Torte i Kolači</title>
+  <meta name="description" content="Prelepe i unikatne domaće torte za svadbe, rođendane, krštenja i sve vaše proslave. Ručna izrada od najkvalitetnijih sastojaka. Pogledajte naš katalog.">
+  <meta name="keywords" content="torte, domace torte, svadbene torte, rodjendanske torte, decije torte, slatka umetnost, kolaci, narucivanje torti">
+  <meta name="author" content="Slatka Umetnost">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/hero-cake.jpg">
+  
+  <!-- Remix Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo" id="logo-link">Slatka<span>Umetnost</span></a>
+      
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Otvaranje navigacije">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="#home" class="nav-link" id="nav-link-home">Početna</a></li>
+        <li><a href="#about" class="nav-link" id="nav-link-about">O nama</a></li>
+        <li><a href="#catalog" class="nav-link" id="nav-link-catalog">Katalog</a></li>
+        <li><a href="#menu" class="nav-link" id="nav-link-menu">Ukusi</a></li>
+        <li><a href="#process" class="nav-link" id="nav-link-process">Kako naručiti</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-link-contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <span class="hero-tag">Domaća radionica torti</span>
+          <h1>Slatka umetnost stvorena za Vaša slavlja</h1>
+          <p class="hero-desc">Unikatne domaće torte i kolači, ručno rađeni po tradicionalnim receptima sa najkvalitetnijim sastojcima. Pretvaramo Vaše ideje u slatku realnost.</p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary" id="hero-btn-catalog"><i class="ri-gallery-line"></i> Pogledaj katalog</a>
+            <a href="#contact" class="btn btn-outline" id="hero-btn-contact">Pošalji upit</a>
+          </div>
+        </div>
+        <div class="hero-image-container reveal">
+          <div class="hero-image-bg"></div>
+          <div class="hero-img-wrap">
+            <img src="assets/images/hero-cake.jpg" alt="Luksuzna trospratna torta sa zlatnim ivicama i ukrasnim lampicama" id="hero-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features/Values Section -->
+  <section class="features section-padding" id="features">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="subtitle">Zašto mi?</span>
+        <h2>Kvalitet bez kompromisa</h2>
+        <p>Svaka torta je posebno umetničko delo, stvoreno sa pažnjom i ljubavlju prema detaljima.</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal" id="feature-1">
+          <div class="feature-icon">
+            <i class="ri-heart-line"></i>
+          </div>
+          <h3>100% Prirodni sastojci</h3>
+          <p>Koristimo isključivo domaće, sveže i kvalitetne sastojke proverenog porekla. Naše torte se prave bez veštačkih smesa, aditiva i industrijskih zamena.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card reveal" id="feature-2">
+          <div class="feature-icon">
+            <i class="ri-brush-line"></i>
+          </div>
+          <h3>Dizajn po Vašoj želji</h3>
+          <p>Svaki detalj i dekoraciju ručno modelujemo. Vaše je samo da nam pošaljete ideju ili sliku torte koju želite.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card reveal" id="feature-3">
+          <div class="feature-icon">
+            <i class="ri-restaurant-line"></i>
+          </div>
+          <h3>Domaći recepti</h3>
+          <p>Kombinujemo bogatstvo tradicionalnih ukusa sa modernim tehnikama dekoracije. Ukus koji se pamti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery/Katalog Section -->
+  <section class="gallery section-padding" id="catalog">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="subtitle">Naš katalog</span>
+        <h2>Galerija slatkih kreacija</h2>
+        <p>Pogledajte naše najnovije radove. Svaka torta se dizajnira i prilagođava isključivo Vašim željama.</p>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="gallery-filters reveal" id="gallery-filter-container">
+        <button class="filter-btn active" data-filter="all" id="filter-all">Sve torte</button>
+        <button class="filter-btn" data-filter="mladenecke" id="filter-mladenecke">Mladenačke</button>
+        <button class="filter-btn" data-filter="rodjendanske" id="filter-rodjendanske">Rođendanske</button>
+        <button class="filter-btn" data-filter="decije" id="filter-decije">Dečije</button>
+        <button class="filter-btn" data-filter="svecane" id="filter-svecane">Svečane</button>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+      
+      <!-- Load More Button -->
+      <div class="gallery-load-more reveal">
+        <button class="btn btn-outline" id="load-more-btn"><i class="ri-arrow-down-double-line"></i> Prikaži više slika</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zatvori galeriju"><i class="ri-close-line"></i></button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Prethodna slika"><i class="ri-arrow-left-s-line"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightbox-img">
+    </div>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Sledeća slika"><i class="ri-arrow-right-s-line"></i></button>
+  </div>
+
+  <!-- Menu/Flavors Section -->
+  <section class="menu section-padding" id="menu">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="subtitle">Izbor ukusa</span>
+        <h2>Naši najpopularniji recepti</h2>
+        <p>Pažljivo odabrane kombinacije koje će oduševiti Vas i Vaše goste.</p>
+      </div>
+      
+      <div class="menu-grid">
+        <!-- Flavor 1 -->
+        <div class="menu-card reveal" id="menu-card-1">
+          <div class="menu-header-img">
+            <img src="assets/images/cake_2.webp" alt="Reforma torta" loading="lazy">
+          </div>
+          <div class="menu-info">
+            <div class="menu-title-row">
+              <h3>Reforma Klasik</h3>
+              <span class="menu-tag">Tradicionalno</span>
+            </div>
+            <p class="menu-desc">Najfiniji spoj pečenih domaćih oraha i bogatog čokoladnog fila kuvanog na pari. Pravi izbor za tradicionalne ukuse koji se pamte.</p>
+            <div class="menu-ingredients">
+              <span class="ingredient-badge">Domaći orasi</span>
+              <span class="ingredient-badge">Čokolada 70%</span>
+              <span class="ingredient-badge">Pravi maslac</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Flavor 2 -->
+        <div class="menu-card reveal" id="menu-card-2">
+          <div class="menu-header-img">
+            <img src="assets/images/cake_3.webp" alt="Moskva Šnit torta" loading="lazy">
+          </div>
+          <div class="menu-info">
+            <div class="menu-title-row">
+              <h3>Moskva Šnit</h3>
+              <span class="menu-tag">Voćno & Kremasto</span>
+            </div>
+            <p class="menu-desc">Osvežavajući spoj sočnih višanja, slatkih breskvi i pečenih badema u kombinaciji sa laganim, kuvanim vanila kremom i šuškavim koricama.</p>
+            <div class="menu-ingredients">
+              <span class="ingredient-badge">Višnje & Breskve</span>
+              <span class="ingredient-badge">Pečeni bademi</span>
+              <span class="ingredient-badge">Lagani vanila krem</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Flavor 3 -->
+        <div class="menu-card reveal" id="menu-card-3">
+          <div class="menu-header-img">
+            <img src="assets/images/cake_4.webp" alt="Plazma torta" loading="lazy">
+          </div>
+          <div class="menu-info">
+            <div class="menu-title-row">
+              <h3>Plazma Fantazija</h3>
+              <span class="menu-tag">Čokoladno</span>
+            </div>
+            <p class="menu-desc">Neprikosnoveni favorit svih generacija. Kremasta kombinacija mlevenog Plazma keksa, pečenih lešnika i bogate mlečne čokolade sa slatkom pavlakom.</p>
+            <div class="menu-ingredients">
+              <span class="ingredient-badge">Plazma keks</span>
+              <span class="ingredient-badge">Pečeni lešnici</span>
+              <span class="ingredient-badge">Mlečna čokolada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process section-padding" id="process">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="subtitle">Kako do torte?</span>
+        <h2>Jednostavan proces naručivanja</h2>
+        <p>Pošto radimo isključivo po narudžbini, proces je brz i prilagođen Vama.</p>
+      </div>
+      
+      <div class="process-steps">
+        <!-- Step 1 -->
+        <div class="process-step reveal" id="step-1">
+          <div class="step-number">01</div>
+          <h3>Izbor dizajna i ukusa</h3>
+          <p>Izaberite neku od slika iz našeg kataloga ili nam pošaljite sliku/skicu dizajna koji Vam se dopada sa Pinteresta ili Instagrama.</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process-step reveal" id="step-2">
+          <div class="step-number">02</div>
+          <h3>Kontakt i dogovor</h3>
+          <p>Javite nam se na Viber, WhatsApp ili Instagram. Dogovaramo se oko veličine, izbora ukusa i tačnog datuma.</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process-step reveal" id="step-3">
+          <div class="step-number">03</div>
+          <h3>Izrada i preuzimanje</h3>
+          <p>Torta se pravi sveža, neposredno pre Vašeg događaja. Preuzimanje je lično na našoj adresi ili vršimo dostavu po dogovoru.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-container reveal">
+          <div class="about-img-wrap">
+            <img src="assets/images/cake_5.webp" alt="Radni prostor i dekorisanje torte" id="about-img">
+          </div>
+          <div class="about-badge" id="about-experience-badge">
+            <span class="number">10+</span>
+            <span class="text">Godina Strasti i Iskustva</span>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <span class="subtitle">Upoznajte nas</span>
+          <h2>Ljubav prema slatkim detaljima</h2>
+          <p class="about-text">Sve je počelo pre više od jedne decenije u porodičnoj kuhinji iz želje da se stvori nešto lepo i ukusno za rođendane naše dece. Ta strast je prerasla u posvećenost izradi unikatnih torti za sve Vaše najvažnije životne trenutke.</p>
+          <p class="about-text">Mi ne verujemo u fabričke smese, praškove i jeftine zamene. Svaka naša kora se peče pojedinačno, a svaki fil se sporo kuva na pari. Verujemo da samo vrhunski i sveži sastojci daju onaj pravi, bogati domaći ukus koji se prepričava.</p>
+          
+          <div class="about-features">
+            <div class="about-feat" id="about-feat-1"><i class="ri-checkbox-circle-line"></i> Ručno modelovane figure</div>
+            <div class="about-feat" id="about-feat-2"><i class="ri-checkbox-circle-line"></i> Sveži prirodni sastojci</div>
+            <div class="about-feat" id="about-feat-3"><i class="ri-checkbox-circle-line"></i> Tradicionalna priprema</div>
+            <div class="about-feat" id="about-feat-4"><i class="ri-checkbox-circle-line"></i> Dostava na adresu (po dogovoru)</div>
+          </div>
+          
+          <a href="#contact" class="btn btn-primary" id="about-btn-contact"><i class="ri-chat-3-line"></i> Pišite nam za dogovor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq section-padding" id="faq">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="subtitle">Pitanja i odgovori</span>
+        <h2>Često postavljana pitanja</h2>
+        <p>Evo odgovora na neka od pitanja koja nam najčešće postavljate.</p>
+      </div>
+      
+      <div class="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item reveal" id="faq-item-1">
+          <div class="faq-question">
+            <h3>Koliko ranije je potrebno naručiti tortu?</h3>
+            <div class="faq-icon"><i class="ri-arrow-down-s-line"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Preporučujemo da tortu naručite najmanje 7 do 14 dana unapred. Za mladenačke torte (venčanja) poželjno je rezervisati termin i do mesec dana ranije, pošto je broj mesta u toku sezone ograničen.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div class="faq-item reveal" id="faq-item-2">
+          <div class="faq-question">
+            <h3>Kako se kreće cena i kako se računa veličina torte?</h3>
+            <div class="faq-icon"><i class="ri-arrow-down-s-line"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Cena torte zavisi od izabranog ukusa i složenosti same dekoracije (ručno rađene figure, cveće, posebne tehnike). Veličinu torte računamo prema broju gostiju – standard je oko 120g do 150g po parčetu po osobi.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 3 -->
+        <div class="faq-item reveal" id="faq-item-3">
+          <div class="faq-question">
+            <h3>Da li vršite dostavu torti na adresu?</h3>
+            <div class="faq-icon"><i class="ri-arrow-down-s-line"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Za manje torte preporučujemo lično preuzimanje na našoj adresi kako bi se osigurala bezbednost torte u toku transporta. Za velike i višespratne torte (poput mladenačkih) vršimo besplatnu dostavu direktno u restoran ili na adresu po dogovoru.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 4 -->
+        <div class="faq-item reveal" id="faq-item-4">
+          <div class="faq-question">
+            <h3>Mogu li poslati sliku torte koju želim sa Pinteresta ili Instagrama?</h3>
+            <div class="faq-icon"><i class="ri-arrow-down-s-line"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Naravno! Većina naših radova se radi upravo po uzoru na fotografije koje nam klijenti pošalju. Trudimo se da ispratimo svaku želju, uz napomenu da je svaka torta ručni rad i unikat, pa su male umetničke varijacije moguće.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section-padding" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="subtitle">Kontaktirajte nas</span>
+          <h3>Hajde da kreiramo nešto slatko zajedno</h3>
+          <p>Tu smo da odgovorimo na sva Vaša pitanja i da zajedno isplaniramo savršenu tortu za Vaš poseban dan. Slobodno nam pišite ili nas pozovite.</p>
+          
+          <div class="contact-methods">
+            <!-- Method 1 -->
+            <div class="contact-method-item" id="contact-phone">
+              <div class="contact-method-icon"><i class="ri-phone-line"></i></div>
+              <div class="contact-method-text">
+                <h4>Telefon za informacije</h4>
+                <p>+381 60 123 4567</p>
+              </div>
+            </div>
+            
+            <!-- Method 2 -->
+            <div class="contact-method-item" id="contact-email">
+              <div class="contact-method-icon"><i class="ri-mail-line"></i></div>
+              <div class="contact-method-text">
+                <h4>E-mail adresa</h4>
+                <p>slatka.umetnost@gmail.com</p>
+              </div>
+            </div>
+            
+            <!-- Method 3 -->
+            <div class="contact-method-item" id="contact-location">
+              <div class="contact-method-icon"><i class="ri-map-pin-line"></i></div>
+              <div class="contact-method-text">
+                <h4>Preuzimanje</h4>
+                <p>Lokacija po dogovoru, Niš (Srbija)</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-quick-actions">
+            <a href="https://wa.me/381601234567" target="_blank" class="btn btn-whatsapp" id="contact-wa-direct"><i class="ri-whatsapp-line"></i> Piši na WhatsApp</a>
+            <a href="viber://chat?number=%2B381601234567" class="btn btn-viber" id="contact-viber-direct"><i class="ri-chat-private-line"></i> Piši na Viber</a>
+          </div>
+        </div>
+        
+        <div class="contact-form-wrap reveal">
+          <div class="contact-form-success" id="form-success">
+            <i class="ri-checkbox-circle-fill"></i> Poruka uspešno poslata! Otvaramo WhatsApp za slanje detalja...
+          </div>
+          
+          <form id="contact-form" action="#" method="POST">
+            <div class="contact-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="contact-form-group">
+                <label for="form-name">Vaše Ime i Prezime *</label>
+                <input type="text" id="form-name" class="contact-form-control" placeholder="Petar Petrović" required>
+              </div>
+              <div class="contact-form-group">
+                <label for="form-phone">Telefon / Viber *</label>
+                <input type="tel" id="form-phone" class="contact-form-control" placeholder="+381 60 123 4567" required>
+              </div>
+            </div>
+            
+            <div class="contact-form-group">
+              <label for="form-email">E-mail adresa (opciono)</label>
+              <input type="email" id="form-email" class="contact-form-control" placeholder="petar@gmail.com">
+            </div>
+            
+            <div class="contact-form-group">
+              <label for="form-cake-type">Tip proslave / torte *</label>
+              <select id="form-cake-type" class="contact-form-control" required>
+                <option value="" disabled selected>Izaberite tip proslave</option>
+                <option value="Svadbena Torta">Svadba (Mladenačka torta)</option>
+                <option value="Dečiji Rođendan">Dečiji rođendan</option>
+                <option value="Rođendan za odrasle">Rođendan za odrasle</option>
+                <option value="Krštenje">Krštenje</option>
+                <option value="Sitni kolači / Kapkejkovi">Sitni kolači ili Kapkejkovi</option>
+                <option value="Drugo">Drugo slavlje</option>
+              </select>
+            </div>
+            
+            <div class="contact-form-group">
+              <label for="form-message">Vaša poruka (željeni ukus, broj gostiju, ideje za dizajn...) *</label>
+              <textarea id="form-message" class="contact-form-control" placeholder="Napišite nam detalje o torti koju želite (npr. ukus Reforma, za oko 30 gostiju, sa dekoracijom medvedića...)" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="form-submit-btn"><i class="ri-send-plane-line"></i> Pošalji upit i otvori WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about" id="footer-about-col">
+          <a href="#home" class="footer-logo">Slatka<span>Umetnost</span></a>
+          <p>Unikatne, domaće, ručno rađene torte i kolači po narudžbini. Pretvaramo Vaše ideje u najukusnija umetnička dela.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/citlucanin" target="_blank" class="footer-social-link" aria-label="Pratite nas na Instagramu"><i class="ri-instagram-line"></i></a>
+            <a href="#" target="_blank" class="footer-social-link" aria-label="Pratite nas na Facebooku"><i class="ri-facebook-fill"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col" id="footer-links-col">
+          <h3>Brzi Linkovi</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Početna</a></li>
+            <li><a href="#about">O nama</a></li>
+            <li><a href="#catalog">Katalog torti</a></li>
+            <li><a href="#menu">Popularni ukusi</a></li>
+            <li><a href="#process">Kako poručiti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col" id="footer-contact-col">
+          <h3>Radno Vreme</h3>
+          <ul class="footer-links">
+            <li style="color: var(--bg-tertiary);">Svaki dan: 08:00 - 20:00</li>
+            <li style="color: var(--bg-tertiary);">Porudžbine: Online 24/7</li>
+            <li style="color: var(--color-primary); font-weight: 700; margin-top: var(--spacing-xs);">Obavezno naručivanje 7-14 dana unapred.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Slatka Umetnost. Sva prava zadržana. Sajt dizajniran sa ljubavlju.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/gallery-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
