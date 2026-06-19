@@ -33,21 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryData = typeof galleryImagesList !== 'undefined' ? galleryImagesList : [];
 
   const galleryGrid = document.getElementById('gallery-grid');
+  const galleryGridAll = document.getElementById('gallery-grid-all');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const loadMoreBtn = document.getElementById('load-more-btn');
   
   let currentFilter = 'all';
-  let itemsToShow = 12; // Start with 12 items
   let filteredData = [...galleryData];
 
   // Function to render gallery items
   function renderGallery() {
-    if (!galleryGrid) return;
-    galleryGrid.innerHTML = '';
+    const grid = galleryGrid || galleryGridAll;
+    if (!grid) return;
+    grid.innerHTML = '';
     
-    const itemsToRender = filteredData.slice(0, itemsToShow);
+    // Ako smo na stranici katalog (galleryGridAll) prikazujemo sve slike, inače samo 12
+    const isCatalogPage = !!galleryGridAll;
+    const itemsToRender = isCatalogPage ? filteredData : filteredData.slice(0, 12);
     
-    itemsToRender.forEach((item, index) => {
+    itemsToRender.forEach((item) => {
       const itemEl = document.createElement('div');
       itemEl.className = 'gallery-item reveal';
       itemEl.setAttribute('data-id', item.id);
@@ -66,20 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         openLightbox(galleryData.indexOf(item));
       });
 
-      galleryGrid.appendChild(itemEl);
+      grid.appendChild(itemEl);
     });
 
     // Handle scroll animations for newly rendered items
     setTimeout(revealElements, 100);
-
-    // Show/Hide Load More Button
-    if (loadMoreBtn) {
-      if (itemsToShow >= filteredData.length) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.style.display = 'inline-flex';
-      }
-    }
   }
 
   // Filter selection
@@ -89,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       
       currentFilter = btn.getAttribute('data-filter');
-      itemsToShow = 12; // Reset count
       
       if (currentFilter === 'all') {
         filteredData = [...galleryData];
@@ -100,14 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
       renderGallery();
     });
   });
-
-  // Load More logic
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      itemsToShow += 12;
-      renderGallery();
-    });
-  }
 
   // Initial gallery render
   renderGallery();

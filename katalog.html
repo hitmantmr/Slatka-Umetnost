@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Katalog Torti | Slatka Umetnost</title>
+  <meta name="description" content="Pregledajte kompletan katalog od preko 2000 unikatnih domaćih torti za svadbe, rođendane i svečanosti. Pronađite inspiraciju za Vaše slavlje.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/hero-cake.jpg">
+  
+  <!-- Remix Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.3">
+  
+  <style>
+    /* Specific catalog styles */
+    .catalog-header {
+      padding-top: 140px;
+      padding-bottom: var(--spacing-sm);
+      background-color: var(--bg-secondary);
+      text-align: center;
+    }
+    
+    .catalog-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .catalog-back-btn {
+      margin-bottom: var(--spacing-md);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    
+    .catalog-back-btn:hover {
+      color: var(--color-primary-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="header header-scrolled" id="header">
+    <div class="nav-container">
+      <a href="index.html#home" class="logo" id="logo-link">Slatka<span>Umetnost</span></a>
+      
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Otvaranje navigacije">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="index.html#home" class="nav-link">Početna</a></li>
+        <li><a href="index.html#about" class="nav-link">O nama</a></li>
+        <li><a href="#catalog" class="nav-link active">Katalog</a></li>
+        <li><a href="index.html#menu" class="nav-link">Ukusi</a></li>
+        <li><a href="index.html#process" class="nav-link">Kako naručiti</a></li>
+        <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Catalog Title Header -->
+  <section class="catalog-header">
+    <div class="container">
+      <a href="index.html#catalog" class="catalog-back-btn"><i class="ri-arrow-left-line"></i> Nazad na početnu</a>
+      <h1>Kompletan Katalog</h1>
+      <p style="color: var(--color-text-light); max-width: 600px; margin: 0 auto;">Pregledajte sve naše radove i slatke kreacije. Kliknite na bilo koju sliku za veći prikaz.</p>
+    </div>
+  </section>
+
+  <!-- Catalog Gallery Section -->
+  <section class="gallery section-padding" id="catalog" style="background-color: var(--bg-primary);">
+    <div class="container">
+      
+      <!-- Filter Buttons -->
+      <div class="gallery-filters" id="gallery-filter-container">
+        <button class="filter-btn active" data-filter="all" id="filter-all">Sve torte</button>
+        <button class="filter-btn" data-filter="mladenecke" id="filter-mladenecke">Mladenačke</button>
+        <button class="filter-btn" data-filter="rodjendanske" id="filter-rodjendanske">Rođendanske</button>
+        <button class="filter-btn" data-filter="decije" id="filter-decije">Dečije</button>
+        <button class="filter-btn" data-filter="svecane" id="filter-svecane">Svečane</button>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid-all">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zatvori galeriju"><i class="ri-close-line"></i></button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Prethodna slika"><i class="ri-arrow-left-s-line"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightbox-img">
+    </div>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Sledeća slika"><i class="ri-arrow-right-s-line"></i></button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html#home" class="footer-logo">Slatka<span>Umetnost</span></a>
+          <p>Unikatne, domaće, ručno rađene torte i kolači po narudžbini. Pretvaramo Vaše ideje u najukusnija umetnička dela.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com/citlucanin" target="_blank" class="footer-social-link" aria-label="Pratite nas na Instagramu"><i class="ri-instagram-line"></i></a>
+            <a href="#" target="_blank" class="footer-social-link" aria-label="Pratite nas na Facebooku"><i class="ri-facebook-fill"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Brzi Linkovi</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Početna</a></li>
+            <li><a href="index.html#about">O nama</a></li>
+            <li><a href="#catalog">Katalog torti</a></li>
+            <li><a href="index.html#menu">Popularni ukusi</a></li>
+            <li><a href="index.html#process">Kako poručiti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Radno Vreme</h3>
+          <ul class="footer-links">
+            <li style="color: var(--bg-tertiary);">Svaki dan: 08:00 - 20:00</li>
+            <li style="color: var(--bg-tertiary);">Porudžbine: Online 24/7</li>
+            <li style="color: var(--color-primary); font-weight: 700; margin-top: var(--spacing-xs);">Obavezno naručivanje 7-14 dana unapred.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Slatka Umetnost. Sva prava zadržana. Sajt dizajniran sa ljubavlju.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/gallery-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
