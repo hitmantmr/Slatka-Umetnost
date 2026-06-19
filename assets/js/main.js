@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Setup click event for lightbox
       itemEl.addEventListener('click', () => {
-        openLightbox(galleryData.indexOf(item));
+        openLightbox(filteredData.indexOf(item));
       });
 
       grid.appendChild(itemEl);
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openLightbox(index) {
     if (!lightbox || !lightboxImg) return;
     activeIndex = index;
-    lightboxImg.src = galleryData[activeIndex].src;
+    lightboxImg.src = filteredData[activeIndex].src;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden'; // Lock scrolling
   }
@@ -119,13 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showNext() {
-    activeIndex = (activeIndex + 1) % galleryData.length;
-    lightboxImg.src = galleryData[activeIndex].src;
+    if (filteredData.length === 0) return;
+    activeIndex = (activeIndex + 1) % filteredData.length;
+    lightboxImg.src = filteredData[activeIndex].src;
   }
 
   function showPrev() {
-    activeIndex = (activeIndex - 1 + galleryData.length) % galleryData.length;
-    lightboxImg.src = galleryData[activeIndex].src;
+    if (filteredData.length === 0) return;
+    activeIndex = (activeIndex - 1 + filteredData.length) % filteredData.length;
+    lightboxImg.src = filteredData[activeIndex].src;
   }
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
