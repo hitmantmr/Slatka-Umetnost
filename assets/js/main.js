@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = document.getElementById('form-message').value.trim();
       
       // Pre-fill a WhatsApp message and open it
-      const myPhoneNumber = '381600000000'; // Placeholder - user can change this
+      const myPhoneNumber = '381653310465';
       const waText = `Zdravo! Moje ime je ${name}. Želim da se raspitam o poručivanju torte.%0A%0A*Tip torte:* ${cakeType}%0A*Kontakt telefon:* ${phone}%0A*E-mail:* ${email}%0A*Poruka:* ${msg}`;
       
       const waUrl = `https://wa.me/${myPhoneNumber}?text=${waText}`;
