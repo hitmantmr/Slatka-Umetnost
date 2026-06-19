@@ -188,9 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Contact Form Handler (Direct WhatsApp Redirect option)
+  // 7. Contact Form Handler (Formspree AJAX Submission)
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
+  const formSubmitBtn = document.getElementById('form-submit-btn');
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -202,20 +203,71 @@ document.addEventListener('DOMContentLoaded', () => {
       const cakeType = document.getElementById('form-cake-type').value;
       const msg = document.getElementById('form-message').value.trim();
       
-      // Pre-fill a WhatsApp message and open it
-      const myPhoneNumber = '381653310465';
-      const waText = `Zdravo! Moje ime je ${name}. Želim da se raspitam o poručivanju torte.%0A%0A*Tip torte:* ${cakeType}%0A*Kontakt telefon:* ${phone}%0A*E-mail:* ${email}%0A*Poruka:* ${msg}`;
+      // Onemogući dugme i prikaži loader tokom slanja
+      if (formSubmitBtn) {
+        formSubmitBtn.disabled = true;
+        formSubmitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Slanje upita...';
+      }
+
+      // Klijentkinja može zameniti 'YOUR_FORMSPREE_TOKEN' sa pravim Formspree ID-jem
+      // Formspree je besplatan i sakriva email adresu sa koda sajta
+      const formspreeToken = 'YOUR_FORMSPREE_TOKEN'; 
       
-      const waUrl = `https://wa.me/${myPhoneNumber}?text=${waText}`;
-      
-      // Show success container on site
-      formSuccess.style.display = 'block';
-      contactForm.reset();
-      
-      // Open WhatsApp in a new tab
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-      }, 1500);
+      const formData = {
+        Ime_i_Prezime: name,
+        Telefon_Viber: phone,
+        Email_adresa: email || 'Nije uneta',
+        Tip_torte: cakeType,
+        Poruka: msg
+      };
+
+      // Ako token nije zamenjen, simuliramo uspešno slanje na lokalu radi testiranja
+      if (formspreeToken === 'YOUR_FORMSPREE_TOKEN') {
+        console.log("Simulacija slanja (Zameni token za slanje na email):", formData);
+        setTimeout(() => {
+          if (formSuccess) {
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          if (formSubmitBtn) {
+            formSubmitBtn.disabled = false;
+            formSubmitBtn.innerHTML = '<i class="ri-send-plane-line"></i> Pošalji upit';
+          }
+          contactForm.reset();
+        }, 1200);
+        return;
+      }
+
+      // Slanje upita na Formspree
+      fetch(`https://formspree.io/f/${formspreeToken}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (response.ok) {
+          if (formSuccess) {
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          contactForm.reset();
+        } else {
+          alert('Došlo je do greške. Molimo pokušajte ponovo.');
+        }
+      })
+      .catch(error => {
+        console.error('Greška:', error);
+        alert('Došlo je do greške sa mrežom. Molimo pokušajte ponovo.');
+      })
+      .finally(() => {
+        if (formSubmitBtn) {
+          formSubmitBtn.disabled = false;
+          formSubmitBtn.innerHTML = '<i class="ri-send-plane-line"></i> Pošalji upit';
+        }
+      });
     });
   }
 
